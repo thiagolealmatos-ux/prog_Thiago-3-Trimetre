@@ -6,23 +6,35 @@ Escreva sua solucao no lugar do 'pass'.
 
 
 def soma_lista(lista):
-    """Devolve a soma de todos os numeros da lista. Lista vazia devolve 0."""
-    pass
+    soma = 0
+  for n in lista:
+    soma = soma + n
+  return soma
 
 
 def conta_pares(lista):
-    """Devolve quantos numeros da lista sao pares."""
-    pass
-
+   def conta_pares(lista):
+  contador = 0
+  for n in lista:
+    if n%2 == 0:
+      contador = contador + 1
+  return contador
 
 def maior_valor(lista):
-    """Devolve o maior numero da lista. A lista nao esta vazia."""
-    pass
-
+   def maior_valor(lista):
+  maior = lista[0]
+  for n in lista[i]:
+    if n > maior:
+      maior = n
+  return maior
+    
 
 def existe(lista, alvo):
-    """Devolve True se o alvo esta na lista, False se nao esta."""
-    pass
+    for item in lista:
+        if item == alvo:
+            return true
+        else:
+          return false
 
 
 def busca_linear(lista, alvo):
