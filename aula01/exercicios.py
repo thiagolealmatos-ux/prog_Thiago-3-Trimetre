@@ -13,7 +13,6 @@ def soma_lista(lista):
 
 
 def conta_pares(lista):
-   def conta_pares(lista):
   contador = 0
   for n in lista:
     if n%2 == 0:
@@ -21,7 +20,6 @@ def conta_pares(lista):
   return contador
 
 def maior_valor(lista):
-   def maior_valor(lista):
   maior = lista[0]
   for n in lista[i]:
     if n > maior:
@@ -30,18 +28,28 @@ def maior_valor(lista):
     
 
 def existe(lista, alvo):
-    for item in lista:
-        if item == alvo:
-            return true
-        else:
-          return false
+    for i in lista:
+        if i == alvo:
+            return True
+      
+      return False
 
 
 def busca_linear(lista, alvo):
-    """Devolve a posicao do alvo na lista, ou -1 se ele nao estiver."""
-    pass
+   for i in range (len ( lista ) ) :
+      if lista [ i ] == alvo :
+          return i 
+   return -1
 
 
 def segundo_maior(lista):
-    """(Desafio) Devolve o segundo maior, percorrendo a lista uma unica vez."""
-    pass
+  maior = lista[0]
+  segundo = lista[0]
+  for i in lista:
+      if i > maior:
+       segundo = maior
+       maior = i
+
+      elif i > segundo:
+        segundo = i
+  return segundo
