@@ -21,7 +21,7 @@ def conta_pares(lista):
 
 def maior_valor(lista):
   maior = lista[0]
-  for n in lista[i]:
+  for n in lista:
     if n > maior:
       maior = n
   return maior
@@ -44,8 +44,8 @@ def busca_linear(lista, alvo):
 
 def segundo_maior(lista):
   maior = lista[0]
-  segundo = lista[0]
-  for i in lista:
+  segundo = lista[1]
+  for i in lista[2:]:
       if i > maior:
        segundo = maior
        maior = i
