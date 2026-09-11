@@ -45,6 +45,12 @@ def busca_linear(lista, alvo):
 def segundo_maior(lista):
   maior = lista[0]
   segundo = lista[1]
+  
+  if maior < segundo:
+      temp = maior
+      maior = segundo
+      segundo = temp
+
   for i in lista[2:]:
       if i > maior:
        segundo = maior
