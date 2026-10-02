@@ -14,14 +14,14 @@ Quem devolve so o resultado nao passa nos testes.
 
 def soma_contando(lista):
 
-  soma = 0
-  operacoes = 0
+    soma = 0
+    operacoes = 0
 
-  for numero in lista:
-    soma += numero
-    operacoes += 1
+    for numero in lista:
+        soma += numero
+        operacoes += 1
 
-  return soma, operacoes
+    return soma, operacoes
 
 
 def busca_linear_contando(lista, alvo):
