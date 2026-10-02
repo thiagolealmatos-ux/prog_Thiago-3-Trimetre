@@ -73,13 +73,15 @@ def tem_repetido_contando(lista):
                 
     return False, comparacoes
 
-
-def quantas_divisoes(n):
-    """Quantas vezes da para dividir n por 2 ate sobrar 1.
-    Use divisao inteira. Devolve so o numero, sem contagem.
-    quantas_divisoes(8) -> 3"""
-    pass
-
+def quantas_divisoes(n): 
+    
+    divisoes = 0
+    
+    while n > 1:
+        n = n // 2
+        divisoes += 1
+    
+    return divisoes
 
 def mais_frequente_contando(lista):
     """(Desafio) Devolve (valor, comparacoes).
