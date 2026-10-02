@@ -57,7 +57,7 @@ def busca_binaria_contando(lista, alvo):
             fim = meio - 1
      
     return -1, comparacoes   
-    
+
 
 
 def tem_repetido_contando(lista):
@@ -84,7 +84,22 @@ def quantas_divisoes(n):
     return divisoes
 
 def mais_frequente_contando(lista):
-    """(Desafio) Devolve (valor, comparacoes).
-    O valor que mais aparece na lista. Em caso de empate, o que aparece
-    primeiro. Conte 1 comparacao cada vez que comparar dois elementos."""
-    pass
+    
+    comparacoes = 0
+    valor_frequente = lista[0]
+    valor_mais_frequente = 0
+    
+    for i in range (len(lista)):
+        quantidade = 0
+        
+        for j in range (len(lista)):
+            comparacoes += 1
+            
+            if lista[i] == lista[j]:
+                quantidade += 1
+                
+        if quantidade > valor_mais_frequente:
+                valor_frequente = lista[i]
+                valor_mais_frequente = quantidade
+    
+    return valor_frequente, comparacoes
