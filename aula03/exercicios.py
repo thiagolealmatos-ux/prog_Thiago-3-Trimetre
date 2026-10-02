@@ -13,31 +13,65 @@ Quem devolve so o resultado nao passa nos testes.
 
 
 def soma_contando(lista):
-    """Devolve (soma, operacoes).
-    Conte 1 operacao para cada numero que voce somar.
-    soma_contando([1, 2, 3]) -> (6, 3)"""
-    pass
+
+  soma = 0
+  operacoes = 0
+
+  for numero in lista:
+    soma += numero
+    operacoes += 1
+
+  return soma, operacoes
 
 
 def busca_linear_contando(lista, alvo):
-    """Devolve (posicao, comparacoes), ou (-1, comparacoes) se nao achar.
-    Conte 1 comparacao cada vez que comparar um elemento com o alvo.
-    Pare assim que encontrar."""
-    pass
+    
+    comparacoes = 0
+    
+    for i in range(len(lista)):
+        comparacoes += 1
+        
+        if lista[i] == alvo:
+            return i, comparacoes
+    
+    return -1, comparacoes        
 
 
 def busca_binaria_contando(lista, alvo):
-    """Recebe uma lista JA ORDENADA.
-    Devolve (posicao, comparacoes), ou (-1, comparacoes) se nao achar.
-    Conte 1 comparacao cada vez que olhar o elemento do meio."""
-    pass
+    
+    inicio = 0
+    fim = len(lista) - 1
+    comparacoes = 0
+    
+    while inicio <= fim:
+        meio = (inicio + fim) //2
+        comparacoes += 1
+        
+        if lista[meio] == alvo:
+            return meio, comparacoes
+            
+        elif lista[meio] < alvo:
+            inicio = meio + 1
+        
+        else:
+            fim = meio - 1
+     
+    return -1, comparacoes   
+    
 
 
 def tem_repetido_contando(lista):
-    """Devolve (True, comparacoes) ou (False, comparacoes).
-    Conte 1 comparacao cada vez que comparar um par de elementos.
-    Pare assim que encontrar o primeiro repetido."""
-    pass
+    
+    comparacoes = 0
+    
+    for i in range (len(lista)):
+        for j in range (+ 1, len(lista)):
+            comparacoes += 1
+            
+            if lista[i] == lista[j]:
+                return True, comparacoes
+                
+    return False, comparacoes
 
 
 def quantas_divisoes(n):
