@@ -65,7 +65,7 @@ def tem_repetido_contando(lista):
     comparacoes = 0
     
     for i in range (len(lista)):
-        for j in range (+ 1, len(lista)):
+        for j in range (i+ 1, len(lista)):
             comparacoes += 1
             
             if lista[i] == lista[j]:
@@ -99,7 +99,7 @@ def mais_frequente_contando(lista):
                 quantidade += 1
                 
         if quantidade > valor_mais_frequente:
-                valor_frequente = lista[i]
-                valor_mais_frequente = quantidade
+            valor_frequente = lista[i]
+            valor_mais_frequente = quantidade
     
     return valor_frequente, comparacoes
