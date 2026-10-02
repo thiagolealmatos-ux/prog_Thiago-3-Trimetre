@@ -65,7 +65,7 @@ def tem_repetido_contando(lista):
     comparacoes = 0
     
     for i in range (len(lista)):
-        for j in range (i+ 1, len(lista)):
+        for j in range (i + 1, len(lista)):
             comparacoes += 1
             
             if lista[i] == lista[j]:
