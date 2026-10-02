@@ -44,7 +44,7 @@ def busca_binaria_contando(lista, alvo):
     comparacoes = 0
     
     while inicio <= fim:
-        meio = (inicio + fim) //2
+        meio = (inicio + fim) // 2
         comparacoes += 1
         
         if lista[meio] == alvo:
@@ -64,8 +64,8 @@ def tem_repetido_contando(lista):
     
     comparacoes = 0
     
-    for i in range (len(lista)):
-        for j in range (i + 1, len(lista)):
+    for i in range(len(lista)):
+        for j in range(i + 1, len(lista)):
             comparacoes += 1
             
             if lista[i] == lista[j]:
@@ -89,10 +89,10 @@ def mais_frequente_contando(lista):
     valor_frequente = lista[0]
     valor_mais_frequente = 0
     
-    for i in range (len(lista)):
+    for i in range(len(lista)):
         quantidade = 0
         
-        for j in range (len(lista)):
+        for j in range(len(lista)):
             comparacoes += 1
             
             if lista[i] == lista[j]:
