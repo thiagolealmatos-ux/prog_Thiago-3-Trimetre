@@ -21,33 +21,58 @@ def custo_binaria(n):
 
 
 def tem_repetido_ordenando(lista):
-    """Devolve (True, comparacoes) ou (False, comparacoes).
-    Ordene uma copia e compare so os vizinhos. Conte 1 comparacao por par
-    de vizinhos comparado. Pare no primeiro repetido.
-    A ordenacao em si nao entra na contagem.
-    tem_repetido_ordenando([1, 2, 1, 3]) -> (True, 1)"""
-    pass
+    
+    ordenada = sorted(lista)
+    comparacoes = 0
+
+    for i in range(len(ordenada) - 1):
+        comparacoes += 1
+        if ordenada[i] == ordenada[i + 1]:
+            return True, comparacoes
+
+    return False, comparacoes
 
 
 def mediana(lista):
-    """Valor do meio da lista ordenada. Tamanho par: media dos dois do meio.
-    Lista vazia: None. Nao altere a lista recebida.
-    mediana([4, 1, 3, 2]) -> 2.5"""
-    pass
+   
+    if len(lista) == 0:
+        return None
+
+    ordenada = sorted(lista)
+    meio = len(ordenada) // 2
+
+    if len(ordenada) % 2 == 1:
+        return ordenada[meio]
+
+    return (ordenada[meio - 1] + ordenada[meio]) / 2
 
 
 def buscas_para_compensar(n, custo_ordenar):
-    """Menor numero de buscas k tal que ordenar sai estritamente mais barato:
-        custo_ordenar + k * custo_binaria(n)  <  k * n
-    Devolve -1 se nunca compensa.
-    buscas_para_compensar(100, 10000) -> 108"""
-    pass
+   
+    custo_busca = custo_binaria(n)
+    if custo_busca >= n:
+        return -1
+    k = 1
 
+    while custo_ordenar + k * custo_busca >= k * n:
+        k += 1
+
+    return k
 
 def menor_diferenca(lista):
-    """(Desafio) Menor diferenca, em valor absoluto, entre quaisquer dois
-    elementos. Menos de 2 elementos: None.
-    Existe um teste com 20 mil elementos que da tempo limite se voce
-    olhar todos os pares.
-    menor_diferenca([10, 3, 8, 14]) -> 2"""
-    pass
+  
+    if len(lista) < 2:
+        return None
+
+    ordenada = sorted(lista)
+    menor = abs(ordenada[1] - ordenada[0])
+
+    for i in range(1, len(ordenada) - 1):
+        diferenca = abs(ordenada[i + 1] - ordenada[i])
+
+        if diferenca == 0:
+            return 0
+        if diferenca < menor:
+            menor = diferenca
+
+    return menor
